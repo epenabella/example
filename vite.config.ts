@@ -6,10 +6,20 @@ export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
   return defineConfig({
-    plugins: [react()],
+    plugins: [
+      react({ tsDecorators: true }),
+    ],
     server: {
-      port: 8080,
+      port: parseInt(process.env.VITE_APP_PORT),
       strictPort: true,
+      // middlewareMode: true
     },
+    // appType: 'custom',
+    
   });
 };
+
+// {
+//   name: "custom-express",
+//   configureServer: async () => await createServer(),
+// },

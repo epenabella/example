@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const getUsers = async function () {
-  const res = await fetch("http://localhost:5174/api/user-profiles");
+  const res = await fetch("http://localhost:5175/api/user-profiles");
   return await res.json();
 };
 

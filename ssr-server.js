@@ -1,13 +1,13 @@
+import "reflect-metadata";
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import express from 'express'
 import { createServer as createViteServer} from 'vite'
 
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-async function createServer() {
+export async function createServer() {
   const app = express()
 
   // Create Vite server in middleware mode and configure the app type as
@@ -15,20 +15,13 @@ async function createServer() {
   // can take control
   const vite = await createViteServer({
     server: { middlewareMode: true },
-    appType: 'custom'
+    appType: 'custom',
   })
 
   // Use vite's connect instance as middleware. If you use your own
   // express router (express.Router()), you should use router.use
   app.use(vite.middlewares)
 
-  //add routes and middleware
-  const { AppRoutesAndMiddleware } = await vite.ssrLoadModule('/src/server/index.ts');
-
-  //add server routes and middleware
-  app.use(AppRoutesAndMiddleware);
-
-  //if no routes, serve ssr'ed react content
   app.use('*', async (req, res, next) => {
      const url = req.originalUrl
    
@@ -67,13 +60,14 @@ async function createServer() {
      }
    })
 
-  // eslint-disable-next-line no-undef
-  app.listen(process.env.VITE_APP_PORT)
-  // eslint-disable-next-line no-undef
-  console.log('Now listening on port: ' + process.env.VITE_APP_PORT)
-  // eslint-disable-next-line no-undef
-  console.log(`visit: http://localhost:${process.env.VITE_APP_PORT}`)
+  // // eslint-disable-next-line no-undef
+  // app.listen(process.env.VITE_APP_PORT)
+  // // eslint-disable-next-line no-undef
+  // console.log('Now listening on port: ' + process.env.VITE_APP_PORT)
+  // // eslint-disable-next-line no-undef
+  // console.log(`visit: http://localhost:${process.env.VITE_APP_PORT}`)
 
 }
 
-createServer()
+createServer();
+
