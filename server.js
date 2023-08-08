@@ -2,7 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import express from 'express'
-import { createServer as createViteServer } from 'vite'
+import { createServer as createViteServer} from 'vite'
+
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -58,7 +59,14 @@ async function createServer() {
        next(e)
      }
    })
-  app.listen(5174)
+
+  // eslint-disable-next-line no-undef
+  app.listen(process.env.VITE_APP_PORT)
+  // eslint-disable-next-line no-undef
+  console.log('Now listening on port: ' + process.env.VITE_APP_PORT)
+  // eslint-disable-next-line no-undef
+  console.log(`visit: http://localhost:${process.env.VITE_APP_PORT}`)
+
 }
 
 createServer()
