@@ -26,7 +26,7 @@ async function createServer() {
   const { AppRoutesAndMiddleware } = await vite.ssrLoadModule('/src/server/index.ts');
 
   //add server routes and middleware
-  app.use(AppRoutesAndMiddleware);
+  app.use( AppRoutesAndMiddleware );
 
   //if no routes, serve ssr'ed react content
   app.use('*', async (req, res, next) => {
@@ -68,11 +68,11 @@ async function createServer() {
    })
 
   // eslint-disable-next-line no-undef
-  app.listen(process.env.VITE_APP_PORT)
-  // eslint-disable-next-line no-undef
-  console.log('Now listening on port: ' + process.env.VITE_APP_PORT)
-  // eslint-disable-next-line no-undef
-  console.log(`visit: http://localhost:${process.env.VITE_APP_PORT}`)
+  const port = process.env.VITE_APP_PORT
+  
+  app.listen(port)
+  console.log('Now listening on port: ' + port)
+  console.log(`visit: http://localhost:${port}`)
 
 }
 
