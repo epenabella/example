@@ -58,30 +58,40 @@ const Home = () => {
         <section className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-20">
           {/* Grid */}
           <div className="grid md:grid-cols-2 gap-10 md:gap-8 xl:gap-20 md:items-start">
-            <div className='my-5 lg:my-0'>
-              <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-                Hire{" "}
-                <span className="text-volvo-blue-light">Rick Penabella</span>{" "}
-                today
-              </h1>
-              <p className="mt-3 text-lg text-gray-800 dark:text-gray-400">
-                8+ years of Full-Stack Development namely React & C#
-              </p>
-              <p className="mt-3 text-lg text-gray-800 dark:text-gray-600">
-                Most recently on the SMA Dev Ops team but have picked up Nodejs,
-                express with SSR, and TypeORM
-              </p>
+            <div className="my-5 lg:my-0 lg:flex lg:h-full lg:items-center">
+              <div>
+                <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
+                  Hire{" "}
+                  <span className="text-volvo-blue-light">Rick Penabella</span>{" "}
+                  today
+                </h1>
+                <p className="mt-3 text-lg text-gray-800 dark:text-gray-400">
+                  8+ years of Full-Stack Development namely React & C#
+                </p>
+                <p className="mt-3 text-lg text-gray-800 dark:text-gray-600">
+                  Most recently on the SMA Dev Ops team but have picked up
+                  Nodejs, express with SSR, and TypeORM
+                </p>
 
-              {/* Buttons */}
-              <div className="mt-7 flex flex-wrap columns-2 lg:flex-row lg:flex gap-3 h-auto w-full justify-start">
-                <PrimaryLinkButton text="View Demo" icon={<CodeBracketsIcon />}/>
-                <PrimaryLinkButton text="View Swagger" icon={<SwaggerIcon />}/>
-                <SecondaryLinkButton text="Learn More (cv)" icon={<DocumentTextIcon />}
-                  href="https://drive.google.com/file/d/1N9BM5rVDmtkvAjyzY5MG768OAqbWZFWz/view?usp=drive_link"
-                />
+                {/* Buttons */}
+                <div className="mt-7 flex flex-wrap columns-2 lg:flex-row lg:flex gap-3 h-auto w-full justify-start">
+                  <PrimaryLinkButton
+                    text="View Demo"
+                    icon={<CodeBracketsIcon />}
+                  />
+                  <PrimaryLinkButton
+                    text="View Swagger"
+                    icon={<SwaggerIcon />}
+                  />
+                  <SecondaryLinkButton
+                    text="Learn More (cv)"
+                    icon={<DocumentTextIcon />}
+                    href="https://drive.google.com/file/d/1N9BM5rVDmtkvAjyzY5MG768OAqbWZFWz/view?usp=drive_link"
+                  />
+                </div>
+                {/* End Buttons */}
+                {/* Review */}
               </div>
-              {/* End Buttons */}
-              {/* Review */}
             </div>
             {/* End Col */}
             <div className="relative ml-4">
@@ -103,11 +113,11 @@ const Home = () => {
         {/* Testimonials */}
         <section className="overflow-hidden">
           <div className="relative max-w-[85rem] pt-20 pb-10 lg:pt-24 lg:pb-12 lg:mt-10 mx-auto">
-          <div className="max-w-2xl w-3/4 lg:w-1/2 mb-6 sm:mb-10 md:mb-16">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 font-semibold dark:text-gray-200">
-        Recommended by
-      </h2>
-    </div>
+            <div className="max-w-2xl w-3/4 lg:w-1/2 mb-6 sm:mb-10 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 font-semibold dark:text-gray-200">
+                Recommended by
+              </h2>
+            </div>
             {/* Grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Cards */}
@@ -115,7 +125,6 @@ const Home = () => {
               {/* End Cards */}
             </div>
             {/* End Grid */}
-
           </div>
         </section>
         {/* End Testimonials */}
@@ -130,9 +139,10 @@ const Home = () => {
                 Tackling scrum tasks everyday
               </h2>
               <p className="mt-2 md:mt-4 text-gray-500">
-                No task is too big or small just paint the picture of what
-                we should accomplish or chime me in on the conversation and
-                we can analyze the business requirements & build something amazing together.
+                No task is too big or small just paint the picture of what we
+                should accomplish or chime me in on the conversation and we can
+                analyze the business requirements & build something amazing
+                together.
               </p>
             </div>
             {/* End Col */}
