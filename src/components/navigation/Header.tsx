@@ -1,11 +1,9 @@
 import Avatar from "../sub-components/avatar";
 import AvatarPic from '../../assets/images/avatar.webp';
-import { useEffect, useState } from "react";
 
 type Props = {
      routes: {name: string, path: string}[]
 }
-
 
 const Header = ({routes}: Props) => {
 // const [darkMode, setDarkMode] = useState('dark');

@@ -10,7 +10,7 @@ type Props = {
 const Layout = ({routes, ...props}:Props) => {
 //     const location = useLocation();
     
-    return <div className='demo-layout'>
+    return <div className='demo-layout px-7 pt-7 md:pt-9 md:px-14'>
         <Header routes={routes}/>
         <main>{props.children}</main>
         {/* <Footer isHomePage={isRedesignPage}/> */}
