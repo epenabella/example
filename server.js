@@ -69,10 +69,10 @@ async function createServer() {
 
   // eslint-disable-next-line no-undef
   const port = process.env.VITE_APP_PORT
-  
+
   app.listen(port)
-  console.log('Now listening on port: ' + port)
-  console.log(`visit: http://localhost:${port}`)
+  console.log('Now listening on port: ' + port + '\n')
+  console.log(`Visit: http://localhost:${port}`)
 
 }
 
