@@ -7,6 +7,7 @@ export const DollarIcon = () => (
      stroke="currentColor"
      xmlns="http://www.w3.org/2000/svg"
      className="text-volvo-blue dark:volvo-blue-light pb-9"
+     style={{marginRight: -11.5}}
 
    >
      <g id="SVGRepo_bgCarrier" strokeWidth={0} />

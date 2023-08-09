@@ -22,7 +22,7 @@ const Home = () => {
     <>
       <>
         {/* Hero */}
-        <section className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-20">
+        <section className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-20 xl:pt-[8rem]">
           {/* Grid */}
           <div className="grid md:grid-cols-2 gap-10 md:gap-8 xl:gap-20 md:items-start">
             <div className="my-5 lg:my-0 lg:flex lg:h-full lg:items-center">
@@ -205,8 +205,8 @@ const Home = () => {
                       Save time communicating
                     </h3>
                     <p className="mt-1 text-gray-600 dark:text-gray-400">
-                      Born in the USA, California to be exact. Perfect english
-                      and always happy to explain or listen anytime. Swedish is
+                      Born in the USA, California to be exact. Crystal clear english
+                      and always happy to explain and/or listen anytime. Swedish is
                       intermediate and is on the roadmap.
                     </p>
                   </div>

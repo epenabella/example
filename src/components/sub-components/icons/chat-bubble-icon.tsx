@@ -11,6 +11,8 @@ export const ChatBubbleIcon = () => <svg
   stroke="currentColor"
   strokeWidth="12.74"
   className="text-volvo-blue dark:volvo-blue-light pb-[4.5rem]"
+  style={{marginRight: -10}}
+
 
 >
   <g id="SVGRepo_bgCarrier" strokeWidth={0} />
