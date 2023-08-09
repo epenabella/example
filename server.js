@@ -71,7 +71,7 @@ async function createServer() {
   const port = process.env.VITE_APP_PORT
 
   app.listen(port)
-  console.log('Now listening on port: ' + port + '\n')
+  console.log('\nNow listening on port: ' + port + '\n')
   console.log(`Visit: http://localhost:${port}`)
 
 }

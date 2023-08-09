@@ -1,11 +1,12 @@
 {
-     "noImplicitAdditionalProperties": "throw-on-extras",
-     "controllerPathGlobs": ["src/**/*controller.ts"],
-     "spec": { 
-       "outputDirectory": "./src/server/auto-gen",
-       "specVersion": 3
-     },
-     "routes": {
-       "routesDir": "./src/server/auto-gen"
-     }
-   }
+  "entryFile": "src/server/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/**/*controller.ts"],
+  "spec": {
+    "outputDirectory": "./src/server/auto-gen",
+    "specVersion": 3
+  },
+  "routes": {
+    "routesDir": "./src/server/auto-gen"
+  }
+}

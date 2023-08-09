@@ -9,7 +9,7 @@ const Home = () => {
   const [users, setUsers] = useState<any[]>();
   return (
     <>
-      <h1>Home</h1>
+      <h1 className="text-3xl font-bold underline">Home</h1>
       <div>Maybe a header</div>
       <div>BODY</div>
       <button onClick={() => getUsers().then(setUsers)}>Get Users</button>
