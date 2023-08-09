@@ -12,14 +12,6 @@ export default ({ mode }) => {
     server: {
       port: parseInt(process.env.VITE_APP_PORT),
       strictPort: true,
-      // middlewareMode: true
     },
-    // appType: 'custom',
-    
   });
 };
-
-// {
-//   name: "custom-express",
-//   configureServer: async () => await createServer(),
-// },

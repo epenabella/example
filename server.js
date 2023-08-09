@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url'
 import express from 'express'
 import { createServer as createViteServer} from 'vite'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
