@@ -1,6 +1,10 @@
-export const SwaggerIcon = () => <svg
-width={24}
-height={24}
+type Props = {
+     size?: number
+}
+
+export const SwaggerIcon = ({size}:Props) => <svg
+width={size ?? 24}
+height={size ?? 24}
 viewBox="0 0 32 32"
 xmlns="http://www.w3.org/2000/svg"
 fill="#000000"

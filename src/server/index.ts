@@ -27,10 +27,3 @@ AppRoutesAndMiddleware.get("/api/hc", (_, res) => res.json({ message: "Healthy" 
 //SERVE STATIC FILES?
 const frontendFiles = process.cwd() + "/dist";
 AppRoutesAndMiddleware.use(express.static(frontendFiles));
-
-if (!process.env["VITE"]) {
-  // customRouter.get("/*", (_, res) => {
-  //   res.send(frontendFiles/* + "/index.html"*/);
-  // });
-  // app.listen(process.env["PORT"]);
-}

@@ -1,56 +1,23 @@
 import HeroImg from "../assets/images/hero.webp";
 import Recommendation from "../components/sub-components/recommendation";
-import EvangeliImg from "../assets/images/evengeli.webp";
-import RickardImg from "../assets/images/rickard.webp";
-import GustafImg from "../assets/images/gustaf.webp";
 import SnowboradingImg from "../assets/images/snowboarding.webp";
-import { useMemo } from "react";
+import LinuxImg from "../assets/images/linux.webp";
+import TailwindImg from "../assets/images/tailwind.webp";
 import { FAQ } from "../components/sub-components/faq";
 import { PrimaryLinkButton } from "../components/sub-components/primary-link-button";
 import { CodeBracketsIcon } from "../components/sub-components/icons/code-brackets";
 import { SwaggerIcon } from "../components/sub-components/icons/swagger-icon";
 import { SecondaryLinkButton } from "../components/sub-components/secondary-link-button";
 import { DocumentTextIcon } from "../components/sub-components/icons/document-text-icon";
-
-const recommendations = [
-  {
-    name: "Evangeli Patsouri",
-    title: "Software Developer @Ericsson",
-    imgPath: EvangeliImg,
-    recommendation:
-      "Rick and I worked together in Ericsson for a year. Rick is a great developer and teammate with a positive attitude, eager to learn but also spread his knowledge and experience. He is always willing to find solutions and handling conversation between stakeholders and the development team. It was a joy working with Rick and hope we could work together in the future!",
-  },
-  {
-    name: "Gustaf Meland",
-    title: "Business Area Manager @EVRY",
-    imgPath: GustafImg,
-    recommendation:
-      "I have been working with Rick for a year and he is a curious and competent software developer. He brings his good mood to work every day and is always eager to learn new stuff and solve problems. ",
-  },
-  {
-    name: "Rickard Nilsson",
-    title: "Solution Architect @EVRY",
-    imgPath: RickardImg,
-    recommendation:
-      "Rick is a full stack software developer with good knowledge in C#, TypeScript and JavaScript with focus on both web and mobile. Primary technologies are React, React-Native and Xamarin. Lately, he has also get to know SharePoint Framework really well.  I had the pleasure of working with Rick for one year at EVRY and I know him as an ambitious and talented person that will get the job done.",
-  },
-];
+import { IconBlock } from "../components/sub-components/icons/icon-block";
+import ReactSvg from "../assets/react.svg";
+import ViteSvg from "../../public/vite.svg";
+import { recommendations } from "./Data/recommendations";
+import { DollarIcon } from "../components/sub-components/icons/dollar-icon";
+import { ChatBubbleIcon } from "../components/sub-components/icons/chat-bubble-icon";
+import { HandshakeIcon } from "../components/sub-components/icons/handshake-icon";
 
 const Home = () => {
-  // const [users, setUsers] = useState<any[]>();
-
-  const renderRecommendations = useMemo(() => {
-    return recommendations.map((r) => (
-      <Recommendation
-        key={r.name}
-        name={r.name}
-        title={r.title}
-        imgPath={r.imgPath}
-        recommendation={r.recommendation}
-      />
-    ));
-  }, []);
-
   return (
     <>
       <>
@@ -69,8 +36,8 @@ const Home = () => {
                   8+ years of Full-Stack Development namely React & C#
                 </p>
                 <p className="mt-3 text-lg text-gray-800 dark:text-gray-600">
-                  Most recently on the SMA Dev Ops team but have picked up
-                  Nodejs, express with SSR, and TypeORM
+                  Most recently on the Volvo Trucks SMA Dev Ops team but have
+                  picked up Nodejs, express with SSR, and TypeORM
                 </p>
 
                 {/* Buttons */}
@@ -81,6 +48,8 @@ const Home = () => {
                   />
                   <PrimaryLinkButton
                     text="View Swagger"
+                    href="swagger"
+                    openInSameTab
                     icon={<SwaggerIcon />}
                   />
                   <SecondaryLinkButton
@@ -108,11 +77,12 @@ const Home = () => {
           {/* End Grid */}
         </section>
         {/* End Hero */}
-      </>
-      <>
-        {/* Testimonials */}
+        {/* Recommendations */}
         <section className="overflow-hidden">
-          <div className="relative max-w-[85rem] pt-20 pb-10 lg:pt-24 lg:pb-12 lg:mt-10 mx-auto">
+          <div
+            id="recommendations"
+            className="relative max-w-[85rem] pt-20 pb-10 lg:pt-24 lg:pb-12 lg:mt-10 mx-auto"
+          >
             <div className="max-w-2xl w-3/4 lg:w-1/2 mb-6 sm:mb-10 md:mb-16">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 font-semibold dark:text-gray-200">
                 Recommended by
@@ -121,23 +91,38 @@ const Home = () => {
             {/* Grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Cards */}
-              {renderRecommendations}
+              {recommendations &&
+                recommendations.map((r) => (
+                  <Recommendation
+                    key={r.name}
+                    name={r.name}
+                    title={r.title}
+                    imgPath={r.imgPath}
+                    recommendation={r.recommendation}
+                  />
+                ))}
               {/* End Cards */}
             </div>
             {/* End Grid */}
           </div>
         </section>
-        {/* End Testimonials */}
+        {/* End Recommendations */}
       </>
       <>
-        {/* Features */}
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        {/* Highlights */}
+        <section className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+          <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+            Highlights
+          </h2>
           {/* Grid */}
           <div className="mt-5 lg:mt-16 grid lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="lg:col-span-1">
-              <h2 className="font-bold text-2xl md:text-3xl text-gray-800 dark:text-gray-200">
-                Tackling scrum tasks everyday
-              </h2>
+              <h4
+                id="highlights"
+                className="font-bold text-xl md:text-2xl text-gray-800 dark:text-gray-200"
+              >
+                Crush your backlog
+              </h4>
               <p className="mt-2 md:mt-4 text-gray-500">
                 No task is too big or small just paint the picture of what we
                 should accomplish or chime me in on the conversation and we can
@@ -151,7 +136,7 @@ const Home = () => {
                 {/* Icon Block */}
                 <div className="flex gap-x-5">
                   <svg
-                    className="flex-shrink-0 mt-1 w-6 h-6 text-blue-600 dark:text-blue-500"
+                    className="flex-shrink-0 mt-1 w-6 h-6 text-volvo-blue dark:volvo-blue-light"
                     xmlns="http://www.w3.org/2000/svg"
                     width={16}
                     height={16}
@@ -163,11 +148,12 @@ const Home = () => {
                   </svg>
                   <div className="grow">
                     <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Creative minds
+                      Immediate Start
                     </h3>
                     <p className="mt-1 text-gray-600 dark:text-gray-400">
-                      We choose our teams carefully. Our people are the secret
-                      to great work.
+                      Current contract ending purely from specific team budget
+                      cuts. Hire confidently as fellow colleagues managers and
+                      team mates alike give great references.
                     </p>
                   </div>
                 </div>
@@ -175,7 +161,7 @@ const Home = () => {
                 {/* Icon Block */}
                 <div className="flex gap-x-5">
                   <svg
-                    className="flex-shrink-0 mt-1 w-6 h-6 text-blue-600 dark:text-blue-500"
+                    className="flex-shrink-0 mt-1 w-6 h-6 text-volvo-blue dark:volvo-blue-light"
                     xmlns="http://www.w3.org/2000/svg"
                     width={16}
                     height={16}
@@ -186,61 +172,42 @@ const Home = () => {
                   </svg>
                   <div className="grow">
                     <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Simple and affordable
+                      Support your team anywhere
                     </h3>
                     <p className="mt-1 text-gray-600 dark:text-gray-400">
-                      From boarding passes to movie tickets, there's pretty much
-                      nothing you can't store with Preline.
+                      With a wide range of full-stack skills from back end SQL
+                      queries, procedures, and views to painstaking CSS
+                      drudgery, and even Azure cloud configurations no task is
+                      too foreign
                     </p>
                   </div>
                 </div>
                 {/* End Icon Block */}
                 {/* Icon Block */}
                 <div className="flex gap-x-5">
-                  <svg
-                    className="flex-shrink-0 mt-1 w-6 h-6 text-blue-600 dark:text-blue-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={16}
-                    height={16}
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
-                    <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
-                  </svg>
+                  <DollarIcon />
                   <div className="grow">
                     <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Industry-leading documentation
+                      Great value
                     </h3>
                     <p className="mt-1 text-gray-600 dark:text-gray-400">
-                      Our documentation and extensive Client libraries contain
-                      everything a business needs to build a custom integration.
+                      Current bill rate of 800kr per hour from the eworks long
+                      approved consulting firm Silverside AB
                     </p>
                   </div>
                 </div>
                 {/* End Icon Block */}
                 {/* Icon Block */}
                 <div className="flex gap-x-5">
-                  <svg
-                    className="flex-shrink-0 mt-1 w-6 h-6 text-blue-600 dark:text-blue-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={16}
-                    height={16}
-                    fill="currentColor"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z"
-                    />
-                  </svg>
+                  <ChatBubbleIcon />
                   <div className="grow">
                     <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-                      Designing for people
+                      Save time communicating
                     </h3>
                     <p className="mt-1 text-gray-600 dark:text-gray-400">
-                      We actively pursue the right balance between functionality
-                      and aesthetics, creating delightful experiences.
+                      Born in the USA, California to be exact. Perfect english
+                      and always happy to explain or listen anytime. Swedish is
+                      intermediate and is on the roadmap.
                     </p>
                   </div>
                 </div>
@@ -257,12 +224,95 @@ const Home = () => {
               alt="Image Description"
             />
           </div>
-        </div>
-        {/* End Features */}
+        </section>
+        {/* End Highlights */}
       </>
       {/* FAQ */}
       <FAQ />
       {/* End FAQ */}
+      {/* Built With */}
+      <section className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white mb-5 lg:mb-10">
+          This web app was built with:
+        </h2>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 items-start gap-2">
+          <IconBlock
+            title="React"
+            imgPath={ReactSvg}
+            text="React 18.2 Hooks with Server Side Rendering"
+          />
+          <IconBlock
+            title="Node"
+            imgPath="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFDElEQVR4AaXUA6wsXRbF8f9e+1T3M8a2PRMnY9u2bdvh2LatYKxgbHvu430v1+yurnP2V5X7zP5er+S3yj4pcYF58Tcee8+Xfv1J/3nu5x77z8d/6KF3bnEhNO6OL//Bo73Fi775iOu+9FuP/VPy9C0zrrGpX127n9J3elX1217l12yxY9Pm1GIcGnfHtQOemzo+VlXV32W6ERAcyabNvRIlbi6lfyfzDzYlNy3GoXF28suuvaC6zChL9lgDIACMI+kll7tRSglMTzJZLbdntTivc268/PLtqysMDkt6sxkiOGMC6Pd7lFwsRyHCKrB3ynTAzG7d4mx04kK50rS3yJeduTqXX/ipJ/3AjEsDwXniEsmdyIWNmyACLu+mn0j6IcSVW/R6lbc4Sl3tOTRnLfb/tp8pek+q+K+JWwGFjRjnSwTtuckREKWbWpSgRBRht0sp7UnJ31ZKzi0grIW6utaVLxPej/te4RbD2sTTT3hiMWYCwIzkTs5BlEKOoESoBYUw9FyT1j3pHiaihbraPzOzPUb6Ur2sygSAcSEJcBclglLKkSnktiLCSkAy3/Snqakvf/+vv9/883/+3dQWkW1TT96s7OuBBZNGshPeQiEK5AgEHF5cYHF11S69eVefMFNbuHt4UtBUDGYrzJkoZkYhKCUgygnzwZ6Zw0gqa/UggBBA5enIKDbWp/tQgGCyBDS5UErQMRPTCwuMRiMqE47RUVdmIDnuwoqzdriHeTBpcsnkHJTINLnhwMI8pgQYwo5Mu5Lh3hGeRD3Xo4yMSdPkTFMKhHF4aYEcGTMDEzmMwFBXKQnJsCM3InOGsz006VswGNRD6iazuLZCksCgIxcmQ10FILFxcbUSNEsVzVCYTXR9mmiYW1kEcyTHMXTCdnUlceRuQILkYtDU/PMfs3Tzk8WoI9OXcBPyhJQ25uWoKyxAHcNaEkwvz7AwV7OwMEQyJkkQjCJTuajM8JZMOEJdkQpSgAVyY251hUE9IiVjz/8XkYwgJngHxrAZITNcRnLRT06VhLoqyq2CPAhrODA3S5IwMxaXhszOruESkyQiWBvVVJ5IZhjgBuoqR6FRA1Vh/+z8xr+bjaQk/vPfeSJi4r/j+mhIUwquRPKEW0Jd1RqQbcTyYJ2Z+eXTnnZ9fcSBQ8u424Q3AcvDNZI7ddMgqSPW88ByGtnBQ4voDK+6qsTU3jlyDjAmGguj3HRvwq6w/VIkc9RVunRdz82v9tdXM2Zn+n7QNIU9++dx18SfYnGwWi2OVpq59UXU1exvqsX5/fmxcs6a5GLqwBzDusHMJr2JRx9anl+tSw61xcpyY2WoT970Zf8TxmdOfHhOjMG/pg5f3LcQHInMPtUyIj7b5MZaqCttytHiD2+8hmjskebcAPgzYCeexCWmZ5dZHdQX58Jm8Cc3v55benTdNN6ilIgW6uqohia3GNX5b03ON0bcF1g/4UZwGf+Ymh7nF23AALjvlqp/k91btv2jxRV2Xiq3OEpdnc1ltuz+xmW27d6C8YYTvh9zSyvMLa5iGOfIG3qpt3nHpq3faHE26up8rnXJK72aS416GF8DSO78fc8BJOPEx4UgIr661Kz11m346hbno3F2+vfKlLG/nxno/njcAmPP2nDI9PwCkgAoEXtaN3fZA3b6ltxiHBpnpxvsukbc4KpXLmzNhvE7PK4qt0f85+D0qESpcykPN3HVque/D8LaaWkxjosAqoYXqu5e6SUAAAAASUVORK5CYII="
+            text="First time building a true javascript node web server app"
+          />
+          <IconBlock
+            title="Vite"
+            imgPath={ViteSvg}
+            text="SWC bundling- esbuild doesn`t support js decorators"
+          />
+          <IconBlock
+            title="Express"
+            imgPath={
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAMFBMVEX////q6uqgoaEZGhtzc3SSk5Ourq5hYmLHx8f09PVOTk+7u7vf39+DhITT09M3ODgiPZ4kAAAAxElEQVR4Ac2OMQgBARSGv6sDQfbSKaWsHsgV6vZS9lK3F9lL2ctsvcmm7GWfyF5XNhvTbef+yT7x1ft7/f3/6/HHOC3r1gnmQLhGamYjDj5U7ALk7UbD4tp4T2EA4EnDFeGMxQygdQWqEwp+OQsBkXrlAU76nAA4Y2mlB2drotVMDMHN5mtMwbMYVeQjNsEKkaJcm3wv10fcl4Dr8zgSnQB2L/RYKdrKA3LW0etun6yFCMwsyTK6qzrFu733xbQOeAk/4gMf6S1GJRc9sQAAAABJRU5ErkJggg=="
+            }
+            text="Vite server mixes in the Express app with SSR"
+          />
+          <IconBlock
+            title="TypeORM"
+            imgPath={
+              "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEW0lEQVR4Ac3WA5AkSxSF4dvGTO/Ujm3btj3Ptm3btm3btm3btn3fH7M1ERW93b1GRXyRvcisU2lZ7h69epoDjdhNr7IdpZfZivVyme+HOkKdauofjZ1QCRsiP5rnkD/+odzXu7peaf+SCr/jdX630+gCfQR1BinfwR+E+UB3ie7Vk9zyt6ZHqJjokH9FonTEe5+e7/5Fr5X1aSCJl7v+vSogxx9/fETWANRxUybr9bat9BTvn9rhvohvs2uvJ0KAOIeoYUsnyAe6pv85GjD0XPvMCxxoRj96LQZQDoFYHz3QJ3qUM1mHvW9piuNJbXIGtNkTuQeQo17bZ1rgeJgGojATIBqTaEA3usyyAWOwI+iDphm09yIf94KWuwzMZ4AiAhzsjtKDvDMBAhhCAWosCjEEx1wB0uwCQ6MXX4BhlKDb1INqM0A0DPggELpdsFgDDCELVaZqSw+UYgRTsC9wAMuY5RLgcwI8pIe4/CECpKPMIs8yBG7ztxOiGXaYQ2CgyG1oSaQAhk1I3ESAn7XSeTObj1sP8wUPQRl6TX2oCRug0SXa5I3i6x+h7Y94eTYfJiEfXiha5cxn0lzHMPyhXd6t/+Lv2URmAngxZZn9ACEwCFtwAJaf/D1nMu5BL/zOx53M6krQHGeIANE2IeVuUK3xXKubBWLYC4THutmkoDpIFWZDggPwiNa7RdvcyZrlvJd3/MfHrUKPhA1QTnkn/+l7bfWs/i9/r7eJWBofRx96LQbREyqAbu6b7gG6fjte+ivdfzPDkqN17rkD/JPvEsZeCNBO+Suz9Zr/7hRniGXYgH70mWVt2DnQ4xXt9/vp+gcJ8KV2+sqVl6v+EX4SIo8AX2gRlVgF7ITBqyAP9RbFYQMw1phZBS9pqWv24tgHMlBhkY8hZKIBK8Ox2Dei+ViGqShB2pLcCQeRhHyLzMV/FoQ/DcdQgV6LeoyEDBAHw7YApyGTkLQZlB/qlPcZNqEYPdM+E8CJHgxjwGIUDSHvAzv6RPfwJHAZeYOheJb9YBbCB+DlwtoPsHwe0bPc33ObGdOrxQ/7axdOiHnIOEOwBd+IYEeU3iCr6fHeX9lXrtVat0tX9s/jMNJK0d38m+oV8hMNfIdHuF41LuidkP/fRfkkftRLHd/q9lEr6SlO4WyZd2W4MIKTaOgyDqUaAi3QrZg6LdS/HMehF07Ign3F9TR0idOmx3hEj/XPf13mjR7uIYTY9No5bS3/T2dnpyAfoxhGNTpgmGUDVkIbZmMIU0hADDIRBxeykIkAEmCDIB5ehA0wjhfxOFbE9TgLV+NQ3I9LsTOewBGoQi5mIQd5KEYcqtGMFPPljYgLHwBmo7tDsAa+xiR2xB24GPvheZyEehgQ+FGDOhSZQbKRiiykIxYRh+Fw7AZBLu5HCnYyf6+CGjyDA1CFLPiQjkKUmVKQBTGlzE+AJlRDEMAEfKhCEwQxWBcbIw1xZthkeBCADwaiISY/PJDl5vkffxoomqKAbnYAAAAASUVORK5CYII="
+            }
+            text="Connects to separate VPS`s postgres db"
+            readMoreLink="swagger"
+          />
+          <IconBlock
+            title="Swagger"
+            text="SWC bundling- esbuild doesn`t support js decorators"
+            readMoreLink="swagger"
+          >
+            <SwaggerIcon size={48} />
+          </IconBlock>
+          <IconBlock
+            title="Linux"
+            imgPath={LinuxImg}
+            text="Both this site and the db sit on seperate Linux VPS`s"
+          />
+          <IconBlock
+            title="Tailwind CSS"
+            imgPath={TailwindImg}
+            text="Only wrote ~30 CSS lines the rest are tailwind classes"
+          />
+        </div>
+      </section>
+      {/* End Built With */}
+      {/* Hero */}
+      <div className="pb-20 relative overflow-hidden before:absolute before:top-0 before:left-1/2 before:bg-[url('../svg/component/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('../svg/component/squared-bg-element-dark.svg')]">
+        <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+
+          {/* Title */}
+          <div className="mt-5 max-w-xl text-center mx-auto">
+            <h1 className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-gray-200">
+              Any questions?
+            </h1>
+          </div>
+          {/* End Title */}
+
+          {/* Buttons */}
+          <div className="mt-20 grid gap-3 w-full sm:inline-flex sm:justify-center">
+            <PrimaryLinkButton href={`mailto:epenabellaj@gmail.com?subject=You%20are%20Hired!&body=${encodeURIComponent('When can you start?\n\nMailed from profile site')}`}
+            text="Hire me" icon={<HandshakeIcon size={32}/>}/>
+          </div>
+          {/* End Buttons */}
+          <div className="mt-10 max-w-3xl text-center mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              It's been a pleasure getting to know one another.
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* End Hero */}
     </>
   );
 };

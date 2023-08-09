@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "tsoa spec-and-routes && node server",
-    "build": "tsoa spec-and-routes && npm run build:client && npm run build:server",
+    "build": "tsoa spec-and-routes && npm run build:client && npm run build:ssr-server",
     "build:client": "tsoa spec-and-routes && vite build --outDir dist/client",
-    "build:server": "tsoa spec-and-routes && vite build --ssr src/entry-server.jsx --outDir dist/server",
+    "build:ssr-server": "tsoa spec-and-routes && vite build --ssr src/entry-server.jsx --outDir dist/server",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

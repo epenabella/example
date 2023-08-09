@@ -8,8 +8,6 @@ type Props = {
 }
 
 const Layout = ({...props}:Props) => {
-//     const location = useLocation();
-    
     return <div className='demo-layout px-7 pt-7 md:pt-9 md:px-14'>
         <Header />
         <main>{props.children}</main>

@@ -6,7 +6,7 @@ import { UserProfile } from '../entity/UserProfile';
 
 @Route("api/user-profiles")
 export class UserProfilesController extends Controller {
-  @Get("")
+  @Get()
   public async getUsers(): Promise<UserProfile[]> {
      const userProfiles = 
           await postGresDataSource.getRepository(UserProfile)
