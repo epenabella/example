@@ -4,14 +4,14 @@ import Header from "./navigation/Header";
 
 type Props = {
      children: React.ReactNode;
-     routes: {name: string, path: string}[]
+     routes?: {name: string, path: string}[]
 }
 
-const Layout = ({routes, ...props}:Props) => {
+const Layout = ({...props}:Props) => {
 //     const location = useLocation();
     
     return <div className='demo-layout px-7 pt-7 md:pt-9 md:px-14'>
-        <Header routes={routes}/>
+        <Header />
         <main>{props.children}</main>
         {/* <Footer isHomePage={isRedesignPage}/> */}
       </div>
