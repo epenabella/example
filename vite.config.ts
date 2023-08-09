@@ -6,6 +6,9 @@ export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
   return defineConfig({
+    build: {
+      target: 'esnext'
+    },
     plugins: [
       react({ tsDecorators: true }),
     ],

@@ -16,7 +16,7 @@ const Header = () => {
   );
 
   return (
-    <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-transparent text-sm py-3 sm:py-0">
+    <header className="sticky top-0 inset-x-0 min-h-[100px] flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white dark:bg-black text-sm py-3 sm:py-0">
       <nav
         className="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
         aria-label="Global"
@@ -76,8 +76,9 @@ const Header = () => {
             </a>
             <a
               className="hs-dark-mode-active:hidden block hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
-              href="javascript:void(0)"
+              href="#"
               data-hs-theme-click-value="dark"
+              onClick={e => e.preventDefault()}
             >
               <svg
                 className="w-4 h-4"
@@ -92,8 +93,9 @@ const Header = () => {
             </a>
             <a
               className="hs-dark-mode-active:block hidden hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
-              href="javascript:void(0)"
+              href="#"
               data-hs-theme-click-value="light"
+              onClick={e => e.preventDefault()}
             >
               <svg
                 className="w-4 h-4"

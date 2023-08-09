@@ -4,8 +4,6 @@ import { fileURLToPath } from 'url'
 import express from 'express'
 import { createServer as createViteServer} from 'vite'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 async function createServer() {
@@ -24,7 +22,7 @@ async function createServer() {
   app.use(vite.middlewares)
 
   //add routes and middleware
-  const { AppRoutesAndMiddleware } = await vite.ssrLoadModule('/src/server/index.ts');
+  const { AppRoutesAndMiddleware } = await vite.ssrLoadModule('/src/server');
 
   //add server routes and middleware
   app.use( AppRoutesAndMiddleware );

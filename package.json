@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "tsoa spec-and-routes && node server",
-    "build": "tsoa spec-and-routes && npm run build:client && npm run build:ssr-server",
+    "build": "tsoa spec-and-routes && npm run build:client && npm run build:ssr-server && npm run build:server",
     "build:client": "tsoa spec-and-routes && vite build --outDir dist/client",
-    "build:ssr-server": "tsoa spec-and-routes && vite build --ssr src/entry-server.jsx --outDir dist/server",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "build:ssr-server": "tsoa spec-and-routes && vite build --ssr src/entry-server.jsx --outDir dist/ssr-server",
+    "build:server": "tsoa spec-and-routes && vite build --ssr src/server/index.ts --outDir dist/ssr-server/src/server",
+    "generate": "vite build --outDir dist/static && npm run build:server && node prerender",
+    "serve": "NODE_ENV=production node server",
+    "debug": "node --inspect-brk server"
   },
   "dependencies": {
     "@types/cors": "^2.8.13",

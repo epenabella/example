@@ -11,7 +11,7 @@ import { SecondaryLinkButton } from "../components/sub-components/secondary-link
 import { DocumentTextIcon } from "../components/sub-components/icons/document-text-icon";
 import { IconBlock } from "../components/sub-components/icons/icon-block";
 import ReactSvg from "../assets/react.svg";
-import ViteSvg from "../../public/vite.svg";
+import ViteSvg from "../assets/vite.svg";
 import { recommendations } from "./Data/recommendations";
 import { DollarIcon } from "../components/sub-components/icons/dollar-icon";
 import { ChatBubbleIcon } from "../components/sub-components/icons/chat-bubble-icon";
@@ -110,7 +110,7 @@ const Home = () => {
       </>
       <>
         {/* Highlights */}
-        <section className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <section className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 xl:py-40 mx-auto">
           <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
             Highlights
           </h2>
@@ -288,7 +288,7 @@ const Home = () => {
       </section>
       {/* End Built With */}
       {/* Hero */}
-      <div className="pb-20 relative overflow-hidden before:absolute before:top-0 before:left-1/2 before:bg-[url('../svg/component/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('../svg/component/squared-bg-element-dark.svg')]">
+      <div className="pb-20 relative overflow-hidden before:absolute before:top-0 before:left-1/2 before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2">
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
 
           {/* Title */}

@@ -36,7 +36,7 @@ export const FAQ = () => {
         question: "Who is that in the picture?",
         answer: [
           "My mom and step-dad",
-          "For better or worse- single with no kids.",
+          "For better or worse- I'm single with no kids.",
         ],
       },
       {
