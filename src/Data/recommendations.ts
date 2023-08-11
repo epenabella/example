@@ -1,6 +1,6 @@
-import EvangeliImg from "../../assets/images/evengeli.webp";
-import RickardImg from "../../assets/images/rickard.webp";
-import GustafImg from "../../assets/images/gustaf.webp";
+import EvangeliImg from "../assets/images/evengeli.webp";
+import RickardImg from "../assets/images/rickard.webp";
+import GustafImg from "../assets/images/gustaf.webp";
 
 export const recommendations = [
   {

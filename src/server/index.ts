@@ -25,5 +25,8 @@ AppRoutesAndMiddleware.use(["/swagger"], swaggerUi.serve, swaggerUi.setup(swagge
 AppRoutesAndMiddleware.get("/api/hc", (_, res) => res.json({ message: "Healthy" }));
 
 //SERVE STATIC FILES?
-const frontendFiles = process.cwd() + "/dist";
-AppRoutesAndMiddleware.use(express.static(frontendFiles));
+//TODO: change all references for dist
+ if (!(process.env.NODE_ENV === 'production')) {//can execute this if not production
+  const frontendFiles = process.cwd() + process.env.NODE_ENV === 'production' ? 'dist/client' : "/dist";
+  AppRoutesAndMiddleware.use(express.static(frontendFiles));
+ }

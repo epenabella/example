@@ -16,10 +16,7 @@ export const IconBlock = ({ ...props }: Props) => (
         : "group-hover:!cursor-default !cursor-default"
     }`}
     href={props.readMoreLink ?? "#"}
-    onClick={(e) => {
-     e.preventDefault();
-     props.readMoreLink && window.open(props.readMoreLink, "_self")
-    }}
+    onClick={(e) =>  !props.readMoreLink && e.preventDefault() }
   >
     <div className="grid place-items-center w-16 h-16 bg-volvo-blue dark:bg-volvo-blue-light rounded-xl">
       {props.imgPath && <img

@@ -1,5 +1,6 @@
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
+import { AppRoutesAndMiddleware } from './server';
 import { App } from './App'
 
 export const render = (url, context) => {
@@ -9,3 +10,5 @@ export const render = (url, context) => {
     </StaticRouter>,
   )
 }
+
+export const AppRoutes = AppRoutesAndMiddleware;

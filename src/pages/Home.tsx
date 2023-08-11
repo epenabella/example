@@ -12,7 +12,7 @@ import { DocumentTextIcon } from "../components/sub-components/icons/document-te
 import { IconBlock } from "../components/sub-components/icons/icon-block";
 import ReactSvg from "../assets/react.svg";
 import ViteSvg from "../assets/vite.svg";
-import { recommendations } from "./Data/recommendations";
+import { recommendations } from "../Data/recommendations";
 import { DollarIcon } from "../components/sub-components/icons/dollar-icon";
 import { ChatBubbleIcon } from "../components/sub-components/icons/chat-bubble-icon";
 import { HandshakeIcon } from "../components/sub-components/icons/handshake-icon";

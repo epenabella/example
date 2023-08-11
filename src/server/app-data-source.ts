@@ -6,7 +6,7 @@ import { createSSHTunnel, portIsForwarding } from "./app-data-source-connection"
 export const postGresDataSource = new DataSource({
   type: "postgres",
   host: "localhost",
-  port: import.meta.env.DEV ? 3307 : 5432,
+  port: 3307, //import.meta.env.DEV ? 3307 : 5432,
   username: "postgres",
   password: import.meta.env.VITE_DB_PASSWORD,
   database: "postgres",
@@ -19,7 +19,7 @@ export const postGresDataSource = new DataSource({
 
 export const initializeDatabase = async () => {
   
-  if (import.meta.env.DEV && await portIsForwarding(3307) === false) 
+  if (/*import.meta.env.DEV &&*/ await portIsForwarding(3307) === false) 
   await createSSHTunnel();
 
   return await new Promise<void>((resolve, reject) => {
@@ -36,3 +36,4 @@ export const initializeDatabase = async () => {
     })
   });
 }
+
