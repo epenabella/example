@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 
@@ -19,7 +18,6 @@ const routes = Object.keys(pages).map((path) => {
 
 export function App() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
       <Layout routes={routes.map(_ => ({name: _.name, path: _.path})) as any}>
         <Routes>
           {routes.map(({ path, component: RouteComp }) => {
@@ -29,6 +27,5 @@ export function App() {
           })}
         </Routes>
       </Layout>
-    </Suspense>
   );
 }

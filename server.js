@@ -6,7 +6,7 @@ import express from 'express'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // eslint-disable-next-line no-undef
-const AppRoutesAndMiddlewareLocation = process.env.NODE_ENV === 'production' ? '/dist/ssr-server/src/server/index.js' : '/src/server'
+// const AppRoutesAndMiddlewareLocation = process.env.NODE_ENV === 'production' ? '/dist/ssr-server/src/server/index.js' : '/src/server'
 
 
 // eslint-disable-next-line no-undef
@@ -61,7 +61,7 @@ export async function createServer(
 
     //add custom application server controllers routes and middleware like cors etc. at local path
     app.use(
-      (await vite.ssrLoadModule(AppRoutesAndMiddlewareLocation))
+      (await vite.ssrLoadModule('/src/server'))
         .AppRoutesAndMiddleware);
 
   } else {
