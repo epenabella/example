@@ -13,7 +13,8 @@ export function getSyncStatusBarPref(): boolean {
 }
 
 export function setAppearancePref(appearance: DarkModeAppearance): void {
-  (document.getElementsByTagName('html')[0] as HTMLElement)?.classList.toggle('dark', appearance === 'dark');
+  (document.getElementsByTagName('html')[0] as HTMLElement)
+    ?.classList.toggle('dark', appearance === 'dark');
   // localStorage.setItem('appearance', appearance)
 }
 

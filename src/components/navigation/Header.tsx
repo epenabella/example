@@ -1,15 +1,12 @@
 import Avatar from "../sub-components/avatar";
 import AvatarPic from "../../assets/images/avatar.webp";
 import "./Header.scss";
-import { useCallback, useEffect, useState } from "react";
-// import { HSThemeAppearance, initPrelineDarkmode } from "./dark-mode";
+import { useCallback, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DarkMode, DarkModeAppearance } from "@aparajita/capacitor-dark-mode";
 import { getAppearancePref, setAppearancePref } from "./prefs";
 
 const Header = () => {
-  const [darkmodeEnabled, setDarkmodeEnabled] = useState(false);
-
   useEffect(() => {
     DarkMode.init({
       getter: getAppearancePref,
@@ -23,15 +20,29 @@ const Header = () => {
       .catch(console.error);
   }, []);
 
+  const closeNavIfOpen = useCallback(() => {
+    const menu = document.getElementById('navbar-collapse-with-animation')!;
+    if (menu.classList.contains('open')) {
+      (document.getElementsByClassName('hs-collapse-toggle')[0]! as HTMLButtonElement)
+        .click()
+    }
+  }, []);
+
   const scrollToSection = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
       e.preventDefault();
       document
         .getElementById(e.currentTarget.href.split("#")[1])
-        ?.scrollIntoView({ block: "start", behavior: "smooth" });
+          ?.scrollIntoView({ block: "start", behavior: "smooth" });
+
+          closeNavIfOpen();
+
+      
     },
-    []
+    [closeNavIfOpen]
   );
+
+
 
   return (
     <header className="sticky top-0 inset-x-0 min-h-[100px] flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white dark:bg-black text-sm py-3 sm:py-0">
@@ -99,9 +110,8 @@ const Header = () => {
               onClick={async (e) => {
                 e.preventDefault();
                 setAppearancePref(DarkModeAppearance.dark);
+                closeNavIfOpen();
               }}
-
-              // onClick={async e => await DarkMode.update({data: e.currentTarget.getAttribute('data-hs-theme-click-value') === "dark"})}
             >
               <svg
                 className="w-4 h-4"
@@ -117,10 +127,10 @@ const Header = () => {
             <Link
               className="dark:block hidden hs-dark-mode group flex items-center text-gray-600 hover:text-blue-600 font-medium dark:text-gray-400 dark:hover:text-gray-500"
               to="."
-              // onClick={async e => await HSThemeAppearance.setAppearance(e.currentTarget.getAttribute('data-hs-theme-click-value'), true, e.currentTarget)}
               onClick={async (e) => {
                 e.preventDefault();
                 setAppearancePref(DarkModeAppearance.light);
+                closeNavIfOpen();
               }}
             >
               <svg
