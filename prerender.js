@@ -11,6 +11,7 @@ const toAbsolute = (p) => path.resolve(__dirname, p)
 const template = fs.readFileSync(toAbsolute('dist/static/index.html'), 'utf-8')
 const { render } = await import('./dist/ssr-server/entry-server.js')
 
+
 // determine routes to pre-render from src/pages
 const routesToPrerender = fs
   .readdirSync(toAbsolute('src/pages'))
@@ -26,7 +27,7 @@ await (async () => {
   for (const url of routesToPrerender) {
     
     const context = {}
-    const appHtml = await render(url, context)
+    const appHtml = render(url, context)
 
     const html = template.replace(`<!--app-html-->`, appHtml)
 

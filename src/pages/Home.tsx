@@ -20,7 +20,6 @@ import { HandshakeIcon } from "../components/sub-components/icons/handshake-icon
 const Home = () => {
   return (
     <>
-      <>
         {/* Hero */}
         <section className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-20 xl:pt-[8rem]">
           {/* Grid */}
@@ -44,7 +43,7 @@ const Home = () => {
                 <div className="mt-7 flex flex-wrap columns-2 lg:flex-row lg:flex gap-3 h-auto w-full justify-start">
                   <PrimaryLinkButton
                     text="View Demo"
-                    href="https://stackblitz.com/edit/stackblitz-starters-fu2dmw?file=server.js"
+                    href="https://stackblitz.com/edit/stackblitz-starters-fu2dmw?file=server.js&view=editor"
                     icon={<CodeBracketsIcon />}
                   />
                   <PrimaryLinkButton
@@ -108,7 +107,6 @@ const Home = () => {
           </div>
         </section>
         {/* End Recommendations */}
-      </>
       <>
         {/* Highlights */}
         <section className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 xl:py-40 mx-auto">
@@ -270,7 +268,7 @@ const Home = () => {
           />
           <IconBlock
             title="Swagger"
-            text="SWC bundling- esbuild doesn`t support js decorators"
+            text="it's built auto-magically with tsoa with typescript class decorators"
             readMoreLink="swagger"
           >
             <SwaggerIcon size={48} />
