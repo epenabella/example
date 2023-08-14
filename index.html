@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" style='scroll-behavior: smooth;'>
+<html lang="en" style='scroll-behavior: smooth;' class="@@dark-mode@@">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -8,9 +8,8 @@
     <style>#app {display:none;}</style>
   </head>
   <body class="light:bg-white dark:bg-black">
-    <div id="app"><!--ssr-outlet--></div>
+    <div id="app"><!--app-html--></div>
     <script type="module" src="/src/entry-client.tsx"></script>
     <script type="module" src="./node_modules/preline/dist/preline.js"></script>
-    <script src="/scripts/dark-mode.js"></script>
   </body>
 </html>

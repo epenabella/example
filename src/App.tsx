@@ -19,8 +19,8 @@ const routes = Object.keys(pages).map((path) => {
 
 export function App() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <Layout routes={routes.map(_ => ({name: _.name, path: _.path})) as any}>
+    <Layout routes={routes.map((_) => ({ name: _.name, path: _.path })) as any}>
+      <Suspense fallback="loading...">
         <Routes>
           {routes.map(({ path, component: RouteComp }) => {
             return (
@@ -28,7 +28,7 @@ export function App() {
             );
           })}
         </Routes>
-      </Layout>
-    </Suspense>
+      </Suspense>
+    </Layout>
   );
 }
