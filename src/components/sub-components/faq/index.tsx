@@ -16,7 +16,7 @@ export const FAQ = () => {
       {
         question: "What are your biggest weaknesses?",
         answer: [
-          "1) Being very team oriented.  I know it sounds corny, however it seems like the more you share knowledge instead of hording it and also help your department with various tasks, you don't end up siloing yourself and it makes you more dispensable.  Whereas if you did the opposite you end up with all the knowledge in 1 specific area and then no one can fire you.",
+          "1) Being very team oriented.  I know it sounds corny, however it seems like the more you share knowledge instead of hoarding it and also help your department with various tasks, you don't end up siloing yourself and it makes you more dispensable.  Whereas if you did the opposite you end up with all the knowledge in 1 specific area and then no one can fire you.",
           "2) Code first approach.  Sometimes I feel like I should have researched more on the best practices and design-patterns and I end up feeling like I could have saved a little time if I had just read a bit more instead.  However it's made me so productive in anything I have already touched.",
           "3) Too curious about new technology.  Maybe this is a good thing but I'm always looking ahead especially in web server and front-end frameworks, again my niche skill becomes lower in any one area, but on the positive side I become more hirable for other companies.",
         ],

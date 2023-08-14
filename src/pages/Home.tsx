@@ -276,7 +276,7 @@ const Home = () => {
           <IconBlock
             title="Linux"
             imgPath={LinuxImg}
-            text="Both this site and the db sit on seperate Linux VPS`s"
+            text="Both this site and the db sit on separate Linux VPS`s"
           />
           <IconBlock
             title="Tailwind CSS"
